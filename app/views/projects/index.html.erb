@@ -1,0 +1,22 @@
+<% if @projects.any? %>
+  <div class="row">
+    <% @projects.each do |project| %>
+      <div class="col-xs-12 col-sm-3">
+        <div class="thumbnail">
+          <%= link_to (image_tag project.image.url(:thumb)), project_path(project), class: "caption", id: "img-#{project.id}" %>
+          <div class="caption">
+            <p><%= project.caption %></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <% else%>
+    <p>No projects have been added yet</p>
+  </div>
+  <% end %>
+
+<div class="add-button">
+  <%= link_to new_project_path, class: "btn btn-default btn-lg", id: "add-project" do %>
+    <span class="glyphicon glyphicon-plus"></span>
+  <% end %>
+</div>

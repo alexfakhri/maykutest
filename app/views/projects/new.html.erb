@@ -1,0 +1,14 @@
+<div class="project-form">
+  <%= form_for @project, html: {multipart: true} do |f| %>
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <p class="help-block">Select an image to upload.</p>
+    </div>
+    <div class="form-group">
+    <%= f.label :caption %>
+    <%= f.text_area :caption, class: "form-control" %>
+  </div>
+    <%= f.submit class: "btn btn-default"%>
+  <% end %>
+</div>
